@@ -2978,6 +2978,13 @@ export interface components {
              */
             SECONDARY_COLOR: string;
             /**
+             * Countdown Arrow Color
+             * @description Color of the animated countdown arrow.
+             * @default #4283b8
+             * Format: color
+             */
+            countdown_arrow_color: string;
+            /**
              * Theme
              * @description Specify the theme for the app. Set to system for automatic switching based on system/browser settings or force the light/dark theme.
              * @default system
@@ -2996,6 +3003,12 @@ export interface components {
              * @default true
              */
             show_admin_on_frontpage: boolean;
+            /**
+             * Show Shutdown Button
+             * @description Show the shutdown button on the frontpage.
+             * @default true
+             */
+            show_shutdown_button: boolean;
             /**
              * Admin Button Invisible
              * @description If button is shown, it can still be rendered invisible. If enabled, the button is 100% transparent and 5 clicks each within 500ms are required to access the admin login.

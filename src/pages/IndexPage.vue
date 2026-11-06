@@ -27,6 +27,7 @@
         :duration="stateStore.jobmodel.duration"
         :message-duration="configurationStore.configuration.uisettings.TAKEPIC_MSG_TIME"
         :message-text="configurationStore.configuration.uisettings.TAKEPIC_MSG_TEXT"
+        :arrow-color="configurationStore.configuration.uisettings.countdown_arrow_color"
       ></countdown-timer>
     </div>
 
@@ -91,6 +92,7 @@
 
     <q-page-sticky position="bottom-right" class="q-ma-lg">
       <q-btn
+        v-if="configurationStore.configuration.uisettings.show_shutdown_button"
         id="frontpage-button-shutdown"
         color="negative"
         round

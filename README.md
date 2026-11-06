@@ -1,7 +1,7 @@
 <h1 align="center"><img src="https://raw.githubusercontent.com/photobooth-app/photobooth-frontend/refs/heads/main/public/icons/logo-text-blue-transparent.png" alt="photobooth app logo" /></h1>
 <h2 align="center">Frontend</h2>
 
-This repository is the Vue3 frontend for the [photobooth-app](https://github.com/photobooth-app/photobooth-app). The repo is used for development only. The SPA build is [written directly to the photobooth-app](https://github.com/photobooth-app/photobooth-app/tree/main/photobooth/web_spa) manually for every release if updates to the frontend are needed.
+This repository is the Vue3 frontend for the [photobooth-app](https://github.com/photobooth-app/photobooth-app). The repo is used for development only. The SPA build is written directly to `../photobooth-app/src/web/frontend/` in the photobooth-app checkout.
 
 If you just want to use the photobooth app, you don't need this repository. Go over to the documentation and follow the [installation](https://photobooth-app.org/setup/installation/).
 
@@ -36,6 +36,8 @@ After starting `quasar dev`, it starts a proxy server on port 9000. So browse to
 Requests to the backend are transparently forwarded by the proxy to the photobooth-app listening to port 8000 usually.
 So to develop the frontend you also need the photobooth-app installed and started in the background. The app has a virtual camera that is used by default so there is no hardware required to develop the frontend.
 
+Open port 9000 while developing the frontend. Port 8000 serves the frontend bundled with the running Python installation; changes in this checkout are not reflected there just by running `quasar build`.
+
 ### Build the frontend
 
 Once coding is finished, the frontend can be build so the photobooth-app serves the updated frontend without the need of the dev proxy server:
@@ -44,4 +46,4 @@ Once coding is finished, the frontend can be build so the photobooth-app serves 
 quasar build
 ```
 
-The build is written to `../photobooth-app/photobooth/web_spa/`.
+The build is written to `../photobooth-app/src/web/frontend/`. This updates the checkout, not an already-installed copy of photobooth-app.
