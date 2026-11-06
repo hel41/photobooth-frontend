@@ -27,16 +27,21 @@ $warning   : #F2C037;
 */
 // src/css/quasar.variables.scss
 
-$primary: #196cb0;
-$secondary: #4283b8;
-$accent: #16a890;
+$primary: #075a9f;
+$secondary: #236b9e;
+$accent: #008f78;
 
 $dark: #1d1d1d;
 $dark-page: #181818;
 
-$positive: #16a864;
-$negative: #c2182c;
-$info: #65c8f0;
-$warning: #f2c037;
+$positive: #087a45;
+$negative: #b5122a;
+$info: #087fa6;
+$warning: #a85a00;
+
+$generic-border-radius: 2px;
+$button-border-radius: 2px;
+$button-rounded-border-radius: 2px;
+$button-push-border-radius: 2px;
 
 $typography-font-family: 'Inter', '-apple-system', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;

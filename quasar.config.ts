@@ -25,6 +25,7 @@ export default defineConfig(ctx => {
       target: {
         browser: ['es2022', 'firefox115', 'chrome115', 'safari14'],
         node: 'node20',
+
       },
       typescript: {
         //configure vue-tsc here: for now strict is off until code is heavily refactored...
@@ -45,6 +46,7 @@ export default defineConfig(ctx => {
       // publicPath: '/',
       defineEnv: {
         BUILD_DATE: new Date().toISOString(),
+
       },
       // define: {},
       // change to "true" if needed; defaults to "false" now!
@@ -59,6 +61,7 @@ export default defineConfig(ctx => {
       // ignorePublicFolder: true,
       // minify: false,
       // distDir
+      allowOutsideProjectDistDir: true,
       distDir: '../photobooth-app/src/web/frontend/',
 
       // extendViteConf (viteConf) {},

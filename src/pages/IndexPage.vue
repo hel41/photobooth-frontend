@@ -89,6 +89,32 @@
       </div>
     </q-page-sticky>
 
+    <q-page-sticky position="bottom-right" class="q-ma-lg">
+      <q-btn
+        id="frontpage-button-shutdown"
+        color="negative"
+        round
+        class="shutdown-button glass-effect"
+        icon="sym_o_power_settings_new"
+        :aria-label="$t('BTN_LABEL_SHUTDOWN')"
+        @click="confirm_shutdown_host = true"
+      />
+    </q-page-sticky>
+
+    <q-dialog v-model="confirm_shutdown_host">
+      <q-card class="q-pa-sm" style="min-width: 350px">
+        <q-card-section class="row items-center" style="flex-wrap: nowrap">
+          <q-avatar icon="sym_o_power_settings_new" color="negative" text-color="white" />
+          <span class="q-ml-sm">{{ $t('MSG_CONFIRM_SHUTDOWN') }}</span>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn no-caps v-close-popup flat :label="$t('BTN_LABEL_CANCEL')" />
+          <q-btn no-caps v-close-popup :label="$t('BTN_LABEL_SHUTDOWN')" color="negative" @click="remoteProcedureCall('/api/system/host/shutdown')" />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
     <!-- video state controls -->
     <q-page-sticky v-if="stateStore.isStateRecording" id="frontpage-indicator-recording" position="top-right" :offset="[25, 25]" align="center">
       <q-spinner-puff color="red" size="12em" thickness="20" />
@@ -120,6 +146,7 @@ const stateStore = useStateStore()
 const configurationStore = useConfigurationStore()
 const router = useRouter()
 const btnAdminClickCounter = ref(0)
+const confirm_shutdown_host = ref(false)
 
 watchDebounced(
   btnAdminClickCounter,
@@ -212,4 +239,13 @@ const stopRecordingVideo = () => {
 .action-button-admin-invisible
   opacity: 0.0
   cursor: default
+
+.shutdown-button
+  width: 2.5rem
+  height: 2.5rem
+  min-height: 2.5rem
+  padding: 0
+
+  :deep(.q-icon)
+    font-size: 0.8rem
 </style>
