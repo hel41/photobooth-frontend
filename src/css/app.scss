@@ -16,9 +16,12 @@
 }
 
 // app global css in SCSS form
-body {
-  background: $grey-2;
-  background: linear-gradient(120deg, rgba(245, 245, 245, 1) 0%, rgb(227, 229, 240) 50%, rgb(245, 245, 245) 100%);
+body:not(.body--dark) {
+  background: radial-gradient(90rem 42rem at 0% 0%, rgba(38, 166, 154, 0.1), transparent 68%), #f4f8f7;
+}
+
+body.body--dark {
+  background: radial-gradient(90rem 42rem at 0% 0%, rgba(38, 166, 154, 0.14), transparent 68%), #172326;
 }
 
 h1,
@@ -29,6 +32,43 @@ h5,
 h6 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.q-card {
+  border-radius: 16px;
+}
+
+.q-card:not(.q-card--flat) {
+  box-shadow: 0 3px 12px rgba(21, 64, 59, 0.12);
+}
+
+.body--dark .q-card:not(.q-card--flat) {
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
+}
+
+.q-btn:not(.q-btn--round) {
+  border-radius: 10px;
+}
+
+.q-btn:not(.q-btn--round):not(.q-btn--flat):not(.q-btn--outline) {
+  box-shadow: 0 2px 5px rgba(0, 77, 64, 0.18);
+  transition:
+    box-shadow 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 77, 64, 0.24);
+    transform: translateY(-1px);
+  }
+}
+
+.q-btn:focus-visible {
+  outline: 2px solid var(--q-accent);
+  outline-offset: 3px;
+}
+
+.q-field--outlined .q-field__control {
+  border-radius: 10px;
 }
 
 #frontpage_text {

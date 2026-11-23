@@ -31,6 +31,7 @@ Run the narrowest relevant checks for a change. Manual checks use the live backe
 ## Change guidance
 
 - Reuse existing Quasar components and styles, and keep changes focused. Avoid unrelated formatting or generated-file changes.
+- Record every code, configuration, and documentation change in `CHANGELOG.md` under `Unreleased`.
 - Preserve the backend API and SSE contracts. For authenticated requests, use the existing `_fetch` helper in `src/util/fetch_api.js`; it attaches the session token and handles HTTP 401. `remoteProcedureCall` displays errors but does not propagate them or return a response, so use `_fetch` when the caller must handle the result.
 - Use the generated API schema types where applicable. Do not hand-edit `src/dto/generated/`; regenerate them when an intentional backend schema change requires it.
 - Localize new user-facing text with Vue I18n and add or update the English source in `src/i18n/locales/en-US.json`. Preserve interpolation placeholders. Other locales are synchronized through Crowdin; register a new locale in `src/i18n/index.js` if adding one.

@@ -1244,6 +1244,12 @@ export type GroupUiSettings = {
      */
     show_admin_on_frontpage: boolean;
     /**
+     * Show Shutdown Button
+     *
+     * Show the host shutdown button in the frontend.
+     */
+    show_shutdown_button: boolean;
+    /**
      * Admin Button Invisible
      *
      * If button is shown, it can still be rendered invisible. If enabled, the button is 100% transparent and 5 clicks each within 500ms are required to access the admin login.

@@ -5,6 +5,7 @@
 
       <!-- in main layout (main app) always show the back button-->
       <ReturnButton v-if="isSubPage" @trigger-return="$router.back()"></ReturnButton>
+      <ShutdownButton />
     </q-page-container>
   </q-layout>
 </template>
@@ -13,6 +14,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import ReturnButton from '@/components/ReturnButton.vue'
+import ShutdownButton from '@/components/ShutdownButton.vue'
 
 const route = useRoute()
 const isSubPage = computed(() => route.matched.length > 1 && route.matched[0].path != route.matched[1].path)

@@ -5,6 +5,7 @@
 
       <!-- in main layout (main app) always show the back button-->
       <ReturnButton v-if="isSubPage" @trigger-return="$router.back()"></ReturnButton>
+      <ShutdownButton />
 
       <!-- go back to index after inactivity. matched[0] is / or /standalone so always the parent most of the current entry path -->
       <RouteAfterTimeout
@@ -38,6 +39,7 @@ import { useConfigurationStore } from '@/stores/configuration-store'
 import { remoteProcedureCall } from '@/util/fetch_api.js'
 import ReturnButton from '@/components/ReturnButton.vue'
 import RouteAfterTimeout from '@/components/RouteAfterTimeout.vue'
+import ShutdownButton from '@/components/ShutdownButton.vue'
 
 const stateStore = useStateStore()
 const router = useRouter()
